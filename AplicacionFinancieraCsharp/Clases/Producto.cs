@@ -11,9 +11,22 @@ namespace AplicacionFinancieraCsharp.Clases
         public Cliente Cliente { get; set; }
         public double Saldo { get; set; }
 
+        protected Producto()
+        {
+            Cliente = new Cliente();
+            Saldo = 0;
+        }
+
+        protected Producto(Cliente cliente, double saldo)
+        {
+            Cliente = cliente;
+            Saldo = saldo;
+        }
+
+
         public abstract string Detalles();
-        public abstract string Ingresar();
-        public abstract string Sacar();
+        public abstract void Ingresar(double cantidad);
+        public abstract void Sacar(double cantidad);
 
 
     }

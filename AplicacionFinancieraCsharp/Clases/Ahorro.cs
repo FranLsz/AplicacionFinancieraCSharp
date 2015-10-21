@@ -11,19 +11,35 @@ namespace AplicacionFinancieraCsharp.Clases
         public double Bonificacion { get; set; }
         public double Penalizacion { get; set; }
 
+        public Ahorro() : base()
+        {
+            Bonificacion = 0;
+            Penalizacion = 0;
+        }
+
+        public Ahorro(Cliente cliente, double saldo, double bonificacion, double penalizacion):base(cliente, saldo)
+        {
+            Cliente = cliente;
+            Saldo = saldo;
+            Bonificacion = bonificacion;
+            Penalizacion = penalizacion;
+        }
+
+
         public override string Detalles()
         {
-            throw new NotImplementedException();
+            return "\nTitular: " + Cliente.Nombre + "\nSaldo: " + Saldo + "\nTipo de cuenta: Ahorro";
         }
 
-        public override string Ingresar()
+        public override void Ingresar(double cantidad)
         {
-            throw new NotImplementedException();
+            Saldo += cantidad + (cantidad * Bonificacion);
         }
 
-        public override string Sacar()
+        public override void Sacar(double cantidad)
         {
-            throw new NotImplementedException();
+            Saldo -= cantidad + (cantidad * Penalizacion);
         }
+
     }
 }

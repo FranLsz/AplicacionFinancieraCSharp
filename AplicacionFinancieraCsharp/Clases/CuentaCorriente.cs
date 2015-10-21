@@ -12,20 +12,35 @@ namespace AplicacionFinancieraCsharp.Clases
         public double Credito { get; set; }
         public double TipoInteres { get; set; }
 
+        public CuentaCorriente() : base()
+        {
+            Credito = 0;
+            TipoInteres = 0;
+        }
+
+        public CuentaCorriente(Cliente cliente, double saldo, double credito, double tipoInteres) : base(cliente, saldo)
+        {
+            Cliente = cliente;
+            Saldo = saldo;
+            Credito = credito;
+            TipoInteres = tipoInteres;
+        }
+
         public override string Detalles()
         {
-            throw new NotImplementedException();
+            return "\nTitular: " + Cliente.Nombre + "\nSaldo: " + Saldo + "\nTipo de cuenta: Cuenta corriente";
         }
 
-        public override string Ingresar()
+        public override void Ingresar(double cantidad)
         {
-            throw new NotImplementedException();
+            Saldo += cantidad;
         }
 
-        public override string Sacar()
+        public override void Sacar(double cantidad)
         {
-            throw new NotImplementedException();
+            Saldo -= cantidad;
         }
+
 
         public double Prima(double capital, int edad)
         {
