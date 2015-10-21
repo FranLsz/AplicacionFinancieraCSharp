@@ -13,7 +13,7 @@ namespace AplicacionFinancieraCsharp.Clases
 
         protected Producto()
         {
-            Cliente = new Cliente();
+            Cliente = null;
             Saldo = 0;
         }
 

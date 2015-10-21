@@ -17,7 +17,7 @@ namespace AplicacionFinancieraCsharp.Clases
             Penalizacion = 0;
         }
 
-        public Ahorro(Cliente cliente, double saldo, double bonificacion, double penalizacion):base(cliente, saldo)
+        public Ahorro(Cliente cliente, double saldo, double bonificacion, double penalizacion) : base(cliente, saldo)
         {
             Cliente = cliente;
             Saldo = saldo;
