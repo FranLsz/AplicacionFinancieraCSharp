@@ -33,12 +33,12 @@ namespace AplicacionFinancieraCsharp.Clases
 
         public override void Ingresar(double cantidad)
         {
-            Saldo += cantidad + (cantidad * Bonificacion);
+            Saldo += cantidad + (cantidad * Bonificacion / 100);
         }
 
         public override void Sacar(double cantidad)
         {
-            Saldo -= cantidad + (cantidad * Penalizacion);
+            Saldo -= cantidad + (cantidad * Penalizacion / 100);
         }
 
     }

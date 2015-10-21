@@ -38,18 +38,31 @@ namespace AplicacionFinancieraCsharp.Clases
 
         public override void Sacar(double cantidad)
         {
-            Saldo -= cantidad;
+            var s = Saldo - cantidad;
+
+            if (s >= 0 || s < 0 && Math.Abs(s) <= Credito)
+            {
+                if (s < 0)
+                    s += s * TipoInteres / 100;
+                Saldo = s;
+                Console.WriteLine("Operacion realizada, tu saldo es de " + Saldo + " Euros");
+            }
+            else
+            {
+                Console.WriteLine("No se puede retirar tanto saldo");
+                Console.Read();
+            }
         }
 
 
         public double Prima(double capital, int edad)
         {
-            throw new NotImplementedException();
+            return 200000;
         }
 
         public double Cancelacion(double capital)
         {
-            throw new NotImplementedException();
+            return 50000;
         }
     }
 }

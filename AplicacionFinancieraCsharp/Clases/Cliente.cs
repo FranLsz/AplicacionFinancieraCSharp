@@ -12,14 +12,14 @@ namespace AplicacionFinancieraCsharp.Clases
         public string Nombre { get; set; }
         public string Telefono { get; set; }
 
-        protected Cliente()
+        public Cliente()
         {
             DNI = "";
             Nombre = "";
             Telefono = "";
         }
 
-        protected Cliente(string dni, string nombre, string telefono)
+        public Cliente(string dni, string nombre, string telefono)
         {
             DNI = dni;
             Nombre = nombre;
